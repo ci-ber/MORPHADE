@@ -77,13 +77,15 @@ class DLConfigurator(object):
             dst_config = self.dl_config['downstream_tasks'][dst_name]
             downstream_class = import_module(dst_config['module_name'], dst_config['class_name'])
             data = self.load_data(dst_config['data_loader'], train=False)
-
             if 'params' in dst_config.keys():
                 dst = downstream_class(dst_name, self.model, self.device, data, dst_config['checkpoint_path'],
                                        **dst_config['params'])
             else:
                 dst = downstream_class(dst_name, self.model, self.device, data, dst_config['checkpoint_path'])
-            dst.start_task(global_model=global_model)
+            if idx==0:
+                dst.test_alzheimer(global_model=global_model)
+            elif idx==1:
+                dst.test_healthy(global_model=global_model)
             logging.info("[Configurator::eval]: ################ Finished downstream task nr. {}/{} ################"
                          .format(idx, nr_tasks))
 
@@ -107,6 +109,4 @@ class DLConfigurator(object):
             data = data_loader_module({**(data_loader_config['params']['args']), **(data_loader_config['datasets'][dataset_name])})
             downstream_datasets[dataset_name] = data.test_dataloader()
         return downstream_datasets
-
-
 

@@ -9,7 +9,7 @@ import argparse
 import wandb
 from datetime import datetime
 import sys
-sys.path.insert(0, '../morphade')
+sys.path.insert(0, '../MORPHADE')
 from dl_utils.config_utils import *
 import warnings
 
@@ -47,8 +47,8 @@ class Main(object):
             params=configurator.dl_config
         )
 
-        wandb.init(project=exp_name, name=method_name, config=config_dict, id=date_time)
-
+        wandb.init(project=exp_name, name=method_name, config=config_dict)#resume="must"
+        
         device = 'cuda' if config_file['device'] == 'gpu' else 'cpu'
         checkpoint = dict()
         if configurator.dl_config['experiment']['weights'] is not None:

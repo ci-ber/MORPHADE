@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 import copy
 from optim.losses.monai_perceptual_loss import PerceptualLoss2
 from optim.losses import PerceptualLoss,MedicalNetPerceptualSimilarity
-from GenerativeModels.generative.losses import PatchAdversarialLoss
+from optim.losses.adversarial_loss import PatchAdversarialLoss
 from monai.networks.layers import Act
-from GenerativeModels.generative.networks.nets import PatchDiscriminator
+from model_zoo.patchgan_discriminator import PatchDiscriminator
 from dl_utils.visualization import plot_warped_grid
 import torchvision.transforms as transforms
 from model_zoo.deformer_3D import *
