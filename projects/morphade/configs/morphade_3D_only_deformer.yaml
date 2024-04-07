@@ -1,4 +1,4 @@
-name: b001_from_scratch
+name: b001_from_b1
 target_size: &target_size !!python/tuple [128, 128, 128]
 dbatch_size: &dbatch_size 1
 checkpoint_path: &checkpoint_path ./weights/morphade/
@@ -11,7 +11,7 @@ experiment:
   task: test
   weights: ./weights/morphade/latest_model.pt
   # for training, switch to train mode and load the weights from previous training
- # weights: #'./weights/morphade/run-date/latest_model.pt'
+ # weights: #'./weights/morphade/b1_from_scratch/latest_model.pt'
 #
 device: gpu
 configurator:
@@ -65,7 +65,7 @@ trainer:
       params:
     patience: 130
     alfa: 0.001
-    beta: 1
+    beta: 0.01
     gamma: 0.01
     # Optimizer
     # Optimizer

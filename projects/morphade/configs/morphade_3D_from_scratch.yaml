@@ -1,4 +1,4 @@
-name: b001_from_scratch
+name: b1_from_scratch
 target_size: &target_size !!python/tuple [128, 128, 128]
 dbatch_size: &dbatch_size 1
 checkpoint_path: &checkpoint_path ./weights/morphade/
@@ -62,7 +62,7 @@ trainer:
       params:
     patience: 130
     alfa: 0.001
-    beta: 0.01
+    beta: 1
     gamma: 0.01
     # Optimizer
     # Optimizer
