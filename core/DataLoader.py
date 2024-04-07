@@ -55,41 +55,23 @@ class DefaultDataset(Dataset):
 
     def get_image_transform(self):
         default_t = transforms.Compose([ReadImage(), To01(),
-                                        
-                                        # First make strided conv run
+                                    
 
-                                        # intensity augmentations: gamma shifts, intemnsity jitter
-                                        # play with perceptual loss, interpret -> range 0.1- 
-                                        # lpips try this perceptual, visualization-> downstream evaluator
-                                        # set betra=0(make perfect results in terms of registration) first,play with NCC window, deformation map visualization, interpretation of NCC (window)
-                                        # play with beta and look at deformation maps and reconstruction quality
-                                        # 
-
-                                       # transforms.RandomRotation(degrees=(0, 20)),
-                                       # transforms.RandomHorizontalFlip(p=0.2),
                                         transforms.RandomAffine(degrees=(0, 10), translate=(0.1, 0.8), scale=(0.5, 0.7)),
-                                        #transforms.RandomAdjustSharpness(sharpness_factor=1),
-                                       # Norm98(), #Slice(),
                                         Pad((18, 18)),
                                         AddChannelIfNeeded(),
                                         AssertChannelFirst(), self.RES,
-                                        #AdjustIntensity(),
-                                       # transforms.ToPILImage(), transforms.RandomAffine(10, (0.1, 0.1), (0.9, 1.1)), transforms.RandomHorizontalFlip(0.5),transforms.ToTensor()
                                         ])
         return default_t
 
     def get_image_transform_test(self):
         default_t_test = transforms.Compose([ReadImage2(), Norm98()#, Norm98()
-                                      # ,Pad3D((1, 1, 1), type='end')
-                                        # Flip(), #  Slice(),
                                         ,AddChannelIfNeeded(dim=3)
-                                       #,Resize3D(self.target_size)
                                         ])
         return default_t_test
 
     def get_label_transform(self):
         default_t = transforms.Compose([ReadImage(), To01(),
-                                     #   Norm98(), #Slice(),
                                         Pad((18, 18)),
                                         AddChannelIfNeeded(),
                                         AssertChannelFirst(), self.RES])
