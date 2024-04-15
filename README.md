@@ -59,7 +59,7 @@ Then, train the autoencoder with unconstrained deformer by setting b=0.01 and we
 ```
 python core/Main.py --config_path projects/morphade/configs/morphade_3D_only_deformer.yaml
 ```
-For testing with unconstrained deformer(b=0.01) directly, run this on test mode with shared model(https://drive.google.com/file/d/18Tt4Oq4Hv15COI54sRn21T9R6Vm71-4X/view?usp=sharing):
+For testing with unconstrained deformer(b=0.01) directly, run this on test mode with shared model(-will make public after review-):
 ```
 python core/Main.py --config_path projects/morphade/configs/morphade_3D_only_deformer.yaml
 ```
