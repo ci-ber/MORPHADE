@@ -45,9 +45,11 @@ pip3 install torch==1.9.1+cu111 torchvision==0.10.1+cu111 -f https://download.py
 ```
 pip3 install torch==1.9.1 torchvision==0.10.1 -f https://download.pytorch.org/whl/torch_stable.html
 ```
-#### 5). Download datasets 
+#### 5). Download and preprocess datasets 
 
 > You can download the data from ADNI website according to splits given in ./data/ADNI.
+> To apply skull stripping and registration please refer download and install ANTs https://stnava.github.io/ANTs/.
+> Run the brain_extract.py for skull stripping and register.py for registering to a MNI template.
 
 #### 6). Run the pipeline
 
