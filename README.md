@@ -1,14 +1,14 @@
 
 <h1 align="center">
   <br>
-Deformable Autoencoders for Unsupervised Anomaly Detection: Application to Alzheimer's Disease
+Unsupervised Analysis of  Alzheimer’s Disease Signatures using 3D Deformable Autoencoders
   <br>
 </h1>
 </h1>
 
 
 
-> **Abstract:** *The increasing prevalence of neurodegenerative diseases, such as Alzheimer’s Disease (AD), and their impact on cognitive functions underscore the imperative for enhanced diagnostic methodologies. In response, this study introduces MORPHADE (Morphological Autoencoders for Alzheimer's Disease Detection), an innovative method employing unsupervised learning for the detection of AD-related morphological changes in brain magnetic resonance imaging scans. Utilizing 3D deformable autoencoders, MORPHADE advances the field in two key aspects: it incorporates a deformation loss function to improve the reconstruction of individual healthy brain anatomies, using deviations from these reconstructions as indicators of AD, and it assesses deformation field patterns to directly identify pathological markers. Our validation process demonstrates MORPHADE’s effectiveness in increasing the disease classification accuracy. Significantly, the method also facilitates estimation of disease severity, showing a promising correlation with medial temporal lobe atrophy scores determined by an expert neuroradiologist. Additionally, the identification of brain regions most susceptible to AD through MORPHADE aligns with established clinical insights.*
+> **Abstract:** *With the increasing incidence of neurodegenerative diseases such as Alzheimer's Disease (AD), there is a need for further research that enhances detection and monitoring of the diseases. We present MORPHADE (Morphological Autoencoders for Alzheimer's Disease Detection), a novel unsupervised learning approach which uses deformations to allow the analysis of 3D T1-weighted brain images. To the best of our knowledge, this is the first use of deformations with deep unsupervised learning to not only detect, but also localize and assess the severity of structural changes in the brain due to AD. We obtain markedly higher anomaly scores in clinically important areas of the brain in subjects with AD compared to healthy controls, showcasing that our method is able to effectively locate AD-related atrophy. We additionally observe a visual correlation between the severity of atrophy highlighted in our anomaly maps and medial temporal lobe atrophy scores evaluated by a clinical expert. Finally, our method achieves an AUROC of 0.80 in detecting AD, out-performing several supervised and unsupervised baselines. We believe our framework shows promise as a tool towards improved understanding, monitoring and detection of AD. *
 
 
 ## Setup and Run
